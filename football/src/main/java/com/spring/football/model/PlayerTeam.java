@@ -16,6 +16,7 @@ public class PlayerTeam {
     private String to;
     private int moneyPlayer;
     private int moneyTeam;
+    private String name;
 
     public PlayerTeam() {
     }
@@ -26,6 +27,14 @@ public class PlayerTeam {
         this.to = to;
         this.moneyPlayer = moneyPlayer;
         this.moneyTeam = moneyTeam;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getId() {

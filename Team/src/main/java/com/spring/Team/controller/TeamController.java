@@ -1,6 +1,7 @@
 package com.spring.Team.controller;
 
-import com.spring.Team.config.ApiCall;
+
+import com.spring.Team.config.Proxy;
 import com.spring.Team.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ import java.util.Map;
 public class TeamController {
 
     @Autowired
-    private ApiCall apiCall;
+    private Proxy proxy;
     @GetMapping("/team/{from}/player/{to}")
     public Team teamWithPlayer(@PathVariable String from,@PathVariable String to){
 
@@ -27,7 +28,7 @@ public class TeamController {
         urlAttribute.put("to", to);
         // request to another service
         ResponseEntity<Team> teamResponseEntity= new RestTemplate().getForEntity(
-                "http://localhost:8888/football-players/buy/{from}/player/{to}",
+                "http://localhost:8589/football-players/buy/{from}/player/{to}",
                 Team.class,
                 urlAttribute
         );
@@ -40,11 +41,11 @@ public class TeamController {
         return team;
     }
 
-    @GetMapping("/teamNew/{from}/player/{to}")
+    @GetMapping("/teamProxy/{from}/player/{to}")
     public Team teamWithPlayerNew(@PathVariable String from,@PathVariable String to){
 
         // response of teamEntity
-        Team teamResponse= apiCall.getFootballPlayer(from, to);
+        Team teamResponse= proxy.getFootballPlayer(from, to);
         teamResponse.setNote("No");
         teamResponse.setNumberTeam("20");
         //Team team= new Team(teamResponse.getId(),teamResponse.getFrom(), teamResponse.getTo(), teamResponse.getMoneyTeam(), "NONE","50");
