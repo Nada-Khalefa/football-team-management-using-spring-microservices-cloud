@@ -18,6 +18,10 @@ public class PlayerTeam {
     private int moneyTeam;
     private String name;
 
+    @Transient  // not save in dataBase
+    private String port;
+
+
     public PlayerTeam() {
     }
 
@@ -27,6 +31,15 @@ public class PlayerTeam {
         this.to = to;
         this.moneyPlayer = moneyPlayer;
         this.moneyTeam = moneyTeam;
+
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
     }
 
     public String getName() {
