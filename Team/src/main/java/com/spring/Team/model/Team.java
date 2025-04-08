@@ -10,6 +10,8 @@ public class Team {
      private String note;
      private String numberTeam;
 
+     private String port;
+
     public Team() {
     }
 
@@ -20,6 +22,14 @@ public class Team {
         this.moneyTeam = moneyTeam;
         this.note = note;
         this.numberTeam = numberTeam;
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
     }
 
     public long getId() {

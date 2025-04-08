@@ -37,7 +37,7 @@ public class TeamController {
         Team teamResponse= teamResponseEntity.getBody();
 
         Team team= new Team(teamResponse.getId(),teamResponse.getFrom(), teamResponse.getTo(), teamResponse.getMoneyTeam(), "NONE","50");
-
+        team.setPort(teamResponse.getPort());
         return team;
     }
 
