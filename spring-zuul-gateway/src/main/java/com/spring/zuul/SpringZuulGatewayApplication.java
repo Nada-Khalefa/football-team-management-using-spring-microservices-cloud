@@ -1,5 +1,6 @@
 package com.spring.zuul;
 
+//import brave.sampler.Sampler;
 import brave.sampler.Sampler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,4 +22,5 @@ public class SpringZuulGatewayApplication {
 	public Sampler sampler(){
 		return Sampler.ALWAYS_SAMPLE;
 	}
+
 }

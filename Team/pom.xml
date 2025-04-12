@@ -38,22 +38,42 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
+		<!--
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
-			<version>2.2.7.RELEASE</version>
+		    <version>2.2.7.RELEASE</version>
 		</dependency>
 
-		<!--
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
+
+		-->
+<!-- instead spring-cloud-starter-sleuth-->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-brave</artifactId>
+		</dependency>
+
+		<!--instead spring-cloud-sleuth-zipkin-->
+		<dependency>
+			<groupId>io.zipkin.reporter2</groupId>
+			<artifactId>zipkin-reporter-brave</artifactId>
+		</dependency>
+		<!-- Spring Boot Actuator for tracing config -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
--->
+
 		<!--
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -99,7 +119,7 @@
 			</plugin>
 		</plugins>
 	</build>
-
+<!--
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
@@ -138,5 +158,5 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-
+-->
 </project>
