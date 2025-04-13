@@ -2,32 +2,32 @@ package com.spring.players_statistics.model;
 
 public class PlayersStatistics {
 
-    private int numberTeams;
-    private int numberPlayers;
+    private String numberTeams;
+    private String numberPlayers;
     private String country;
 
     public PlayersStatistics() {
     }
 
-    public PlayersStatistics(int numberTeams, int numberPlayers, String country) {
+    public PlayersStatistics(String numberTeams, String numberPlayers, String country) {
         this.numberTeams = numberTeams;
         this.numberPlayers = numberPlayers;
         this.country = country;
     }
 
-    public int getNumberTeams() {
+    public String getNumberTeams() {
         return numberTeams;
     }
 
-    public void setNumberTeams(int numberTeams) {
+    public void setNumberTeams(String numberTeams) {
         this.numberTeams = numberTeams;
     }
 
-    public int getNumberPlayers() {
+    public String getNumberPlayers() {
         return numberPlayers;
     }
 
-    public void setNumberPlayers(int numberPlayers) {
+    public void setNumberPlayers(String numberPlayers) {
         this.numberPlayers = numberPlayers;
     }
 
